@@ -17,7 +17,7 @@ int_printf(const char *format, ...)
 
 
 int_print_char(va_list arg);
-int_print_string(var_list arg);
-int_print_int(var_list arg);
-int_print_float(var_list arg);
+int_print_string(va_list arg);
+int_print_int(va_list arg);
+int_print_float(va_list arg);
 #endif
