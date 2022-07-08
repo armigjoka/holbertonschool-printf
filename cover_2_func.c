@@ -10,10 +10,10 @@ char _print_binary(va_list project)
 	unsigned int n;
 	char *s;
 	int count = 0;
-	
+
 	n = va_arg(project, unsigned int);
 	s = convert(n, 2);
-	
+
 	if (!n)
 		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
@@ -32,10 +32,10 @@ int _print_hex_u(va_list project)
 	int i;
 	char *s;
 	int count = 0;
-	
+
 	n = va_arg(project, unsigned int);
 	s = convert(n, 16);
-	
+
 	if (!n)
 		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
@@ -44,20 +44,22 @@ int _print_hex_u(va_list project)
 }
 
 /**
- * _print_hex_l - prints the hexadecimal long
+ * _print_rot13 - prints the hexadecimal long
  * @project: pointer where to get action over
  * Return: number of the counter
  */
-int _print_rot13(va_list project)
+
+/* int _print_rot13(va_list project)*/
+/**
 {
 	unsigned int n;
 	int i;
 	char *s;
 	int count = 0;
-	
+
 	n = va_arg(project, unsigned int);
 	s = convert(n, 16);
-	
+
 	if (!n)
 		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
@@ -68,4 +70,6 @@ int _print_rot13(va_list project)
 			count += _putchar(s[i]);
 	}
 	return (count);
+
 }
+*/

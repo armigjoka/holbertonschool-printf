@@ -10,10 +10,10 @@ char *convert(unsigned int number, int base)
 	const char model[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *pointer;
-	
+
 	pointer = &buffer[49];
 	*pointer = '\0';
-	
+
 	while (number != 0)
 	{
 		*--pointer = model[number % base];
@@ -32,7 +32,7 @@ int _print_reverse(va_list project)
 	int len = 0;
 	int i;
 	char *s;
-	
+
 	s = va_arg(project, char *);
 	if (!s)
 		s = "(null)";
@@ -54,9 +54,10 @@ int _print_rot13(va_list project)
 	int i, j;
 	char alphabet[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 	char rot13[] = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
-	
+	char *s;
+
 	s = va_arg(project, char *);
-	if(!s)
+	if (!s)
 		s = "(null)";
 	for (i = 0; s[i]; i++)
 	{
@@ -65,7 +66,7 @@ int _print_rot13(va_list project)
 			if (alphabet[j] == s[i])
 			{
 				_putchar(rot13[j]);
-				break
+				break;
 			}
 		}
 		if (!alphabet[j])
@@ -85,14 +86,14 @@ int _print_unsigned(va_list project)
 	int count = 0;
 	int negative = va_arg(project, int);
 	unsigned int n;
-	
+
 	n = negative;
 	for (i = 1000000000; i > 0; i /= 10)
 	{
 		if (n / i)
 		{
 			if ((n / i) % 10 != 0)
-				count += _poutchar((n / i % 10) + '0');
+				count += _putchar((n / i % 10) + '0');
 		}
 		else if (n / i == 0 && i == 1)
 		{
@@ -113,10 +114,10 @@ int _print_octal(va_list project)
 	int count = 0;
 	unsigned int n;
 	char *s;
-	
+
 	n = va_arg(project, unsigned int);
-	s = convert(n , 8);
-	
+	s = convert(n, 8);
+
 	for (i = 0; s[i]; i++)
 	{
 		count += _putchar(s[i]);

@@ -1,4 +1,6 @@
 #include "main.h"
+#include <unistd.h>
+
 /**
  * _putchar - prints character to stdout
  * @c: The character to print
@@ -6,7 +8,7 @@
  */
 int _putchar(char c)
 {
-	return (write*(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -29,9 +31,9 @@ int _print_string(va_list project)
 {
 	int i = 0;
 	char *s;
-	
+
 	s = va_arg(project, char *);
-	if(!s)
+	if (!s)
 		s = "(null)";
 	for (i = 0; s[i]; i++)
 		_putchar(s[i]);
@@ -59,7 +61,7 @@ int _print_int(va_list project)
 	int i;
 	int count = 0;
 	int n = va_arg(project, int);
-	
+
 	if (n < 0)
 	{
 		count += _putchar('-');
