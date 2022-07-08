@@ -8,6 +8,7 @@ int _putchar(char c)
 {
 	return (write*(1, &c, 1));
 }
+
 /**
  * _print_char - writes to stdout
  * @project: The character to print
@@ -18,6 +19,7 @@ int _print_char(va_list project)
 	_putchar(va_arg(project, int));
 	return (1);
 }
+
 /**
  * _print_string - prints a string
  * @project: The string
@@ -27,7 +29,7 @@ int _print_string(va_list project)
 {
 	int i = 0;
 	char *s;
-
+	
 	s = va_arg(project, char *);
 	if(!s)
 		s = "(null)";
@@ -35,6 +37,7 @@ int _print_string(va_list project)
 		_putchar(s[i]);
 	return (i);
 }
+
 /**
  * _print_percent - prints a percent
  * @project: the pointer where it would get actions over
@@ -45,6 +48,7 @@ int _print_percent(va_list project __attribute__((unused)))
 	_putchar('%');
 	return (1);
 }
+
 /**
  * _print_int - to print an intiger
  * @project: pointer where to take actions over
@@ -55,7 +59,7 @@ int _print_int(va_list project)
 	int i;
 	int count = 0;
 	int n = va_arg(project, int);
-
+	
 	if (n < 0)
 	{
 		count += _putchar('-');

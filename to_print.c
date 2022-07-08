@@ -5,7 +5,7 @@
  * @argument: it specifies the character of the input and compare and checked against the given module
  * @project: it is an action pointer for this project
  * Return: the number of the characters printed from the function
-*/
+ */
 int to_print(conts char *format, print_type argument[], va_list project)
 {
 	int i, j;

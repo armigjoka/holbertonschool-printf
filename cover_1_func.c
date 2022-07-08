@@ -10,10 +10,10 @@ char *convert(unsigned int number, int base)
 	const char model[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *pointer;
-
+	
 	pointer = &buffer[49];
 	*pointer = '\0';
-
+	
 	while (number != 0)
 	{
 		*--pointer = model[number % base];
@@ -21,6 +21,7 @@ char *convert(unsigned int number, int base)
 	}
 	return (pointer);
 }
+
 /**
  * _print_reverse - prints the string reversed
  * @project: pointer where to get actions over
@@ -31,7 +32,7 @@ int _print_reverse(va_list project)
 	int len = 0;
 	int i;
 	char *s;
-
+	
 	s = va_arg(project, char *);
 	if (!s)
 		s = "(null)";
@@ -42,6 +43,7 @@ int _print_reverse(va_list project)
 		_putchar(s[i--]);
 	return (len);
 }
+
 /**
  * _print_rot13 - Encode a string on rot13
  * @project: pointer where to get action over
@@ -52,7 +54,7 @@ int _print_rot13(va_list project)
 	int i, j;
 	char alphabet[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 	char rot13[] = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
-
+	
 	s = va_arg(project, char *);
 	if(!s)
 		s = "(null)";
@@ -63,7 +65,7 @@ int _print_rot13(va_list project)
 			if (alphabet[j] == s[i])
 			{
 				_putchar(rot13[j]);
-				break;
+				break
 			}
 		}
 		if (!alphabet[j])
@@ -71,6 +73,7 @@ int _print_rot13(va_list project)
 	}
 	return (i);
 }
+
 /**
  * _print_unsigned - prints unsigned intiger
  * @project: the pointer where it would get actions over
@@ -82,7 +85,7 @@ int _print_unsigned(va_list project)
 	int count = 0;
 	int negative = va_arg(project, int);
 	unsigned int n;
-
+	
 	n = negative;
 	for (i = 1000000000; i > 0; i /= 10)
 	{
@@ -98,6 +101,7 @@ int _print_unsigned(va_list project)
 	}
 	return (count);
 }
+
 /**
  * _print_octal - to print octal number
  * @project: pointer where to take actions over
@@ -109,7 +113,7 @@ int _print_octal(va_list project)
 	int count = 0;
 	unsigned int n;
 	char *s;
-
+	
 	n = va_arg(project, unsigned int);
 	s = convert(n , 8);
 	
