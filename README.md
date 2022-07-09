@@ -57,6 +57,15 @@ $gcc -Wall -Werror -Wextra -pedantic *.c
 The function _printf is used on the C programming and the prototypeis :
 _printf(const char *format, ...)
 
+
+An example of _printf:
+
+int main()
+{
+  _printf("%s, %d, %c\n", School, Age, Year);
+} 
+
+
 Format it is refers to a string whin any specifier numbers followed with an symbol which is '%'.
 
 All files were created and compiled on Ubuntu 14.04.4 LTS using GCC 4.8.4.
