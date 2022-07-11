@@ -1,5 +1,5 @@
 #ifndef _printf_
-#define _printf_
+#define _printf_i
 
 #include <stdarg.h>
 #include <stdlib.h>
