@@ -1,4 +1,4 @@
--printf 
+Programming in C - Project "printf" 
 
 The printf command outputs the arguments you specifiy in formatted form. Printf supports all format specifications for strings as the printf() funciton in C.
 
