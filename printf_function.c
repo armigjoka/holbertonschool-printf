@@ -29,3 +29,31 @@ int _printf(const char *format, ...)
 	va_end(project);
 	return (count);
 }
+/**
+ * _create_buffer - function that will create buffer until the string is ready to print
+ * Return: buffer
+ */
+char *_create_buffer(void)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
+		return (NULL);
+	return (buffer);
+}
+/**
+ * _write_buffer - function that will write buffer until the string is ready to print
+ * @buffer: it is a string that will be printed
+ * @len: length of the string to be printed
+ * @project: the list that will be taken action from
+ */
+void _write_buffer(char *buffer, int len, va_list project)
+{
+	char *buff;
+
+	buff = realloc(buffer, len);
+	write(1, buff, len);
+	free(buff);
+	va_end(project);
+}
